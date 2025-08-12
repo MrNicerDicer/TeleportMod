@@ -13,11 +13,9 @@ class TeleportHelper
             Print("Object " + objectType + " created at position: " + objectCoordinates.ToString());
 
             // Spawn invisible object for interaction
-            TeleportModPoint interactionObj = GetGame().CreateObjectEx("TeleportModPoint", objectCoordinates, ECE_NOSURFACEALIGN, RF_IGNORE);
+            Object interactionObj = GetGame().CreateObjectEx("TeleportModPoint", objectCoordinates, ECE_NOSURFACEALIGN, RF_IGNORE);
             if (interactionObj)
             {
-                // ActionInteractBase action = new TeleportModPlayer();
-                // interactionObj.AddAction(TeleportModPlayer);
                 Print("Object TeleportModPoint created at position: " + objectCoordinates.ToString() + " " + interactionObj);
             } else {
                 Print("Failed to create object TeleportModPoint at position: " + objectCoordinates.ToString());

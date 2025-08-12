@@ -23,6 +23,22 @@ class LO_TeleportEntry
     int TeleportActiveTimeSeconds;          // Time in seconds that teleport will be active after first use and won't require item (0 - item required for each use)
     string MissingItemMessage;              // Message about missing item
     
+    // Cooldown configuration
+    int TeleportCooldownTimeSeconds;        // Cooldown time in seconds after active time expires
+    string CooldownMessage;                 // Message displayed during cooldown period
+    
+    // Safe teleport configuration
+    float PreLoadRadius;                    // Radius to start pre-loading destination (0 = disabled)
+    int TeleportDelaySeconds;               // Delay before teleport execution (for loading)
+    bool IsUndergroundDestination;          // Whether destination is underground (bunker/cave)
+    float SafeGroundOffset;                 // Height offset above ground for surface teleports
+    
+    // Black screen teleport effect
+    bool EnableBlackScreenEffect;           // Enable black screen during teleport
+    int BlackScreenDurationSeconds;         // Duration of black screen (10-20+ seconds)
+    string BlackScreenMessage;              // Message displayed during black screen
+    string BlackScreenSoundFile;            // Sound file to play during black screen (optional)
+    
     // Sound configuration
     bool EnableTeleportSound;               // Whether to play teleport sound
     string TeleportSoundFile;               // Path to the sound file (OGG format)
@@ -45,6 +61,22 @@ class LO_TeleportEntry
         ConsumeRequiredItem = false;        // Default: don't consume item
         TeleportActiveTimeSeconds = 0;
         MissingItemMessage = "";
+        
+        // Cooldown defaults
+        TeleportCooldownTimeSeconds = 0;    // Default: no cooldown (0 disables feature)
+        CooldownMessage = "This teleport is currently on cooldown. Please wait before using it again.";
+        
+        // Safe teleport defaults
+        PreLoadRadius = 15.0;               // Start pre-loading when player is 15m away
+        TeleportDelaySeconds = 3;           // 3 second delay for loading
+        IsUndergroundDestination = false;   // Default: surface destination
+        SafeGroundOffset = 1.5;             // 1.5m above ground for surface teleports
+        
+        // Black screen defaults
+        EnableBlackScreenEffect = false;    // Default: no black screen
+        BlackScreenDurationSeconds = 15;    // 15 seconds default duration
+        BlackScreenMessage = "Teleporting... Please wait.";
+        BlackScreenSoundFile = "";          // No sound by default
         
         // Sound defaults
         EnableTeleportSound = false;

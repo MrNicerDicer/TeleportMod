@@ -66,8 +66,21 @@ class JsonConfigManager
         entry1.RequiredItem = "Crowbar";
         entry1.RequiredItemDamagePercent = 50;  // 50% damage per use
         entry1.ConsumeRequiredItem = false;     // Don't consume item (just damage it)
-        entry1.TeleportActiveTimeSeconds = 30;
+        entry1.TeleportActiveTimeSeconds = 30;  // Active for 30 seconds
         entry1.MissingItemMessage = "You need a Crowbar to open the barn!";
+        // Cooldown configuration
+        entry1.TeleportCooldownTimeSeconds = 60;  // 60 seconds cooldown after active time
+        entry1.CooldownMessage = "The barn door is locked tight. You'll need to wait before forcing it open again.";
+        // Safe teleport configuration
+        entry1.PreLoadRadius = 20.0;  // Start pre-loading when 20m away
+        entry1.TeleportDelaySeconds = 4;  // 4 second delay for loading
+        entry1.IsUndergroundDestination = true;  // This teleports to underground bunker
+        entry1.SafeGroundOffset = 1.5;  // Not used for underground destinations
+        // Black screen configuration
+        entry1.EnableBlackScreenEffect = true;  // Enable black screen for underground teleport
+        entry1.BlackScreenDurationSeconds = 18;  // 18 seconds for complex loading
+        entry1.BlackScreenMessage = "Accessing underground facility... Please wait.";
+        entry1.BlackScreenSoundFile = "";  // No loading sound for now
         // Sound configuration
         entry1.EnableTeleportSound = true;
         entry1.TeleportSoundFile = "TeleportMod\\Data\\teleport_sound.ogg";
@@ -85,8 +98,21 @@ class JsonConfigManager
         entry2.RequiredItem = "Shovel";
         entry2.RequiredItemDamagePercent = 0;   // No damage
         entry2.ConsumeRequiredItem = true;      // Consume/destroy item after use
-        entry2.TeleportActiveTimeSeconds = 0;
+        entry2.TeleportActiveTimeSeconds = 0;   // No active time (item required each use)
         entry2.MissingItemMessage = "A Shovel is required to interact with this house!";
+        // Cooldown configuration (no cooldown since no active time)
+        entry2.TeleportCooldownTimeSeconds = 0;  // No cooldown
+        entry2.CooldownMessage = "This passage is temporarily blocked.";
+        // Safe teleport configuration
+        entry2.PreLoadRadius = 15.0;  // Start pre-loading when 15m away
+        entry2.TeleportDelaySeconds = 2;  // 2 second delay for surface teleport
+        entry2.IsUndergroundDestination = false;  // Surface destination
+        entry2.SafeGroundOffset = 2.0;  // 2m above ground level
+        // Black screen configuration
+        entry2.EnableBlackScreenEffect = false;  // No black screen for simple surface teleport
+        entry2.BlackScreenDurationSeconds = 10;  // 10 seconds if enabled
+        entry2.BlackScreenMessage = "Teleporting to surface location...";
+        entry2.BlackScreenSoundFile = "";  // No loading sound
         // Sound configuration
         entry2.EnableTeleportSound = true;
         entry2.TeleportSoundFile = "TeleportMod\\Data\\teleport_sound.ogg";
