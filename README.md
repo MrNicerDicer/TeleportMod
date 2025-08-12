@@ -3,6 +3,7 @@
 A simple teleport mod for DayZ that can reliably connect locations such as bunkers placed outside the map — or any other custom area. Originally created for use on a private server, the mod includes optional item-based activation and the ability to consume the item upon use (e.g. keycards).
 
 ## Planned Features
+
 - Teleport delay
 - Fade-in/fade-out transitions
 - Sound/Alarm effects during teleportation
@@ -71,31 +72,41 @@ A simple teleport mod for DayZ that can reliably connect locations such as bunke
 
 ## Configuration Parameters
 
-| Parameter                    | Description                                                  |
-|------------------------------|--------------------------------------------------------------|
-| `EnableTeleport`            | Enables or disables the teleport (1 = true, 0 = false)     |
-| `TeleportName`              | Name of the teleport for better organization                |
-| `ObjectType`                | Object type that triggers the teleport                      |
-| `ObjectCoordinates`         | Coordinates of the teleport trigger                         |
-| `ObjectOrientation`         | Orientation (yaw, pitch, roll) of the trigger object        |
-| `TeleportPosition`          | Destination coordinates of the teleport                     |
-| `CheckRadius`               | Radius within which the teleport can be activated           |
-| `RequiredItem`              | Item class name needed for activation                       |
-| `RequiredItemDamagePercent` | Damage applied to the item on use (0.0–100.0)              |
-| `ConsumeRequiredItem`       | Whether the item is destroyed on use (1 = true, 0 = false) |
-| `TeleportActiveTimeSeconds` | Duration (in seconds) the teleport remains active           |
-| `MissingItemMessage`        | Message displayed when required item is missing             |
-| `EnableTeleportSound`       | Enable teleport sound effects (1 = true, 0 = false)        |
-| `TeleportSoundFile`         | Path to the sound file                                      |
-| `TeleportSoundRadius`       | Range of the teleport sound                                 |
-| `TeleportSoundVolume`       | Volume of the teleport sound                                |
+| Parameter                     | Description                                                           |
+| ----------------------------- | --------------------------------------------------------------------- |
+| `EnableTeleport`              | Enables or disables the teleport (1 = true, 0 = false)                |
+| `TeleportName`                | Name of the teleport for better organization                          |
+| `ObjectType`                  | Object type that triggers the teleport                                |
+| `ObjectCoordinates`           | Coordinates of the teleport trigger                                   |
+| `ObjectOrientation`           | Orientation (yaw, pitch, roll) of the trigger object                  |
+| `TeleportPosition`            | Destination coordinates of the teleport                               |
+| `CheckRadius`                 | Radius within which the teleport can be activated                     |
+| `RequiredItem`                | Item class name needed for activation                                 |
+| `RequiredItemDamagePercent`   | Damage applied to the item on use (0.0–100.0)                         |
+| `ConsumeRequiredItem`         | Whether the item is destroyed on use (1 = true, 0 = false)            |
+| `TeleportActiveTimeSeconds`   | Duration (in seconds) the teleport remains active                     |
+| `MissingItemMessage`          | Message displayed when required item is missing                       |
+| `TeleportCooldownTimeSeconds` | Time (in seconds) before the teleport can be used again               |
+| `CooldownMessage`             | Message displayed when teleport is on cooldown                        |
+| `PreLoadRadius`               | Radius in which the destination area is preloaded                     |
+| `TeleportDelaySeconds`        | Delay (in seconds) before teleportation starts after activation       |
+| `IsUndergroundDestination`    | Marks destination as underground to ensure safe placement             |
+| `SafeGroundOffset`            | Vertical offset to avoid spawning inside terrain or objects           |
+| `EnableBlackScreenEffect`     | Enables black screen transition during teleport (1 = true, 0 = false) |
+| `BlackScreenDurationSeconds`  | Duration (in seconds) of the black screen effect                      |
+| `BlackScreenMessage`          | Message shown during black screen                                     |
+| `BlackScreenSoundFile`        | Path to sound played during black screen effect (empty for none)      |
+| `EnableTeleportSound`         | Enable teleport sound effects (1 = true, 0 = false)                   |
+| `TeleportSoundFile`           | Path to the sound file                                                |
+| `TeleportSoundRadius`         | Range of the teleport sound                                           |
+| `TeleportSoundVolume`         | Volume of the teleport sound                                          |
 
 ---
 
 ## Usage
 
 1. Place objects in your map that will serve as teleport triggers
-2. Configure their coordinates and settings in the `config.json`
+2. Configure their coordinates and settings in the `TeleportModConfig.json`
 3. Players can interact with these objects to teleport (if they have the required item)
 4. Items can be damaged or consumed based on your configuration
 
@@ -103,7 +114,7 @@ A simple teleport mod for DayZ that can reliably connect locations such as bunke
 
 ## Credits & Repack
 
-Based on the [ActionTeleport mod](https://steamcommunity.com/sharedfiles/filedetails/?id=3405070168) by FreddyCruger and kenik.  
+Based on the [ActionTeleport mod](https://steamcommunity.com/sharedfiles/filedetails/?id=3405070168) by FreddyCruger and kenik.\
 This version includes an improved configuration format and extended features.
 
 ---
@@ -112,16 +123,16 @@ This version includes an improved configuration format and extended features.
 
 **This mod is 100% free** – just like the original ActionTeleport mod:
 
-- ✅ Free to use on any server  
-- ✅ Free to modify and repack  
-- ✅ Free to redistribute  
+- ✅ Free to use on any server
+- ✅ Free to modify and repack
+- ✅ Free to redistribute
 
 ---
 
 ## Please Consider
 
-- Leaving a like or comment if you find the mod useful  
-- Supporting the original [ActionTeleport mod](https://steamcommunity.com/sharedfiles/filedetails/?id=3405070168)  
+- Leaving a like or comment if you find the mod useful
+- Supporting the original [ActionTeleport mod](https://steamcommunity.com/sharedfiles/filedetails/?id=3405070168)
 - Giving proper credit if you modify or repack the mod
 
 ---
@@ -129,7 +140,10 @@ This version includes an improved configuration format and extended features.
 ## Changelog
 
 ### Version 1.0.0
+
 - Initial release based on ActionTeleport
 - Improved configuration format
 - Extended parameter options
 - Enhanced documentation
+
+
