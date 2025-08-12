@@ -52,7 +52,7 @@ A simple teleport mod for DayZ that can reliably connect locations such as bunke
             "TeleportActiveTimeSeconds": 30,
             "MissingItemMessage": "You need a Crowbar to open the barn!",
             "TeleportCooldownTimeSeconds": 60,
-            "CooldownMessage": "The barn door is locked tight. You'll need to wait before forcing it open again.",
+            "CooldownMessage": "The barn door is locked tight. You'll need to wait...",
             "PreLoadRadius": 20.0,
             "TeleportDelaySeconds": 4,
             "IsUndergroundDestination": 1,
