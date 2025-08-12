@@ -1,0 +1,56 @@
+FrameWidgetClass BlackScreen {
+    position 0 0
+    size 1 1
+    hexactpos 0
+    vexactpos 0
+    hexactsize 1
+    vexactsize 1
+    style Default
+    
+    PanelWidgetClass BlackPanel {
+        position 0 0
+        size 1 1
+        hexactpos 0
+        vexactpos 0
+        hexactsize 1
+        vexactsize 1
+        style DayZDefaultPanel
+        "background color" ARGB(255,0,0,0)
+        
+        TextWidgetClass LoadingText {
+            position 0.5 0.5
+            size 0.6 0.1
+            halign center_ref
+            valign center_ref
+            hexactpos 0
+            vexactpos 0
+            hexactsize 0
+            vexactsize 0
+            style DayZDefaultText
+            text "Loading..."
+            "text color" ARGB(255,255,255,255)
+            "text halign" center
+            "text valign" center
+            "font" "gui/fonts/etelka_monospaced_medium"
+            "text size" 24
+        }
+        
+        TextWidgetClass DotsAnimation {
+            position 0.5 0.6
+            size 0.2 0.05
+            halign center_ref
+            valign center_ref
+            hexactpos 0
+            vexactpos 0
+            hexactsize 0
+            vexactsize 0
+            style DayZDefaultText
+            text "..."
+            "text color" ARGB(255,255,255,255)
+            "text halign" center
+            "text valign" center
+            "font" "gui/fonts/etelka_monospaced_medium"
+            "text size" 18
+        }
+    }
+}
