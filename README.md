@@ -27,17 +27,39 @@ A simple teleport mod for DayZ that can reliably connect locations such as bunke
     "TeleportEntries": [
         {
             "EnableTeleport": 1,
-            "TeleportName": "Barn Door",
+            "TeleportName": "Teleport 1",
             "ObjectType": "Land_Door_germa_1",
-            "ObjectCoordinates": [7758.640137, 16.184601, 14116.900391],
-            "ObjectOrientation": [0.0, 0.0, 0.0],
-            "TeleportPosition": [10.299805, 10.765999, 10.270020],
-            "CheckRadius": 5.0,
+            "ObjectCoordinates": [
+                7758.64013671875,
+                16.184600830078126,
+                14116.900390625
+            ],
+            "ObjectOrientation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "TeleportPosition": [
+                10.2998046875,
+                10.765998840332032,
+                10.27001953125
+            ],
+            "CheckRadius": 1.0,
             "RequiredItem": "Crowbar",
             "RequiredItemDamagePercent": 50.0,
             "ConsumeRequiredItem": 0,
             "TeleportActiveTimeSeconds": 30,
-            "MissingItemMessage": "You need a Crowbar!",
+            "MissingItemMessage": "You need a Crowbar to open the barn!",
+            "TeleportCooldownTimeSeconds": 60,
+            "CooldownMessage": "The barn door is locked tight. You'll need to wait before forcing it open again.",
+            "PreLoadRadius": 20.0,
+            "TeleportDelaySeconds": 4,
+            "IsUndergroundDestination": 1,
+            "SafeGroundOffset": 1.5,
+            "EnableBlackScreenEffect": 1,
+            "BlackScreenDurationSeconds": 18,
+            "BlackScreenMessage": "Accessing underground facility... Please wait.",
+            "BlackScreenSoundFile": "",
             "EnableTeleportSound": 1,
             "TeleportSoundFile": "TeleportMod\\Data\\teleport_sound.ogg",
             "TeleportSoundRadius": 50.0,
